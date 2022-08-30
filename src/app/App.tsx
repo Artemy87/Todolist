@@ -24,7 +24,7 @@ type PropsType = {
     demo?: boolean
 }
 
-function App({demo = false}: PropsType) {
+function App ({demo = false}: PropsType) {
     const status = useSelector<AppRootStateType, string>(state => state.app.status)
     const isInitialized = useSelector<AppRootStateType, boolean>((state) => state.app.isInitialized)
     const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.auth.isLoggedIn)
@@ -62,7 +62,7 @@ function App({demo = false}: PropsType) {
                     {status === 'loading' && <LinearProgress/>}
                 </AppBar>
                 <Container fixed>
-                    <Route exact path={'/'} render={() => <TodolistsList demo={demo}/>}/>
+                    <Route exact path={'/Todolist'} render={() => <TodolistsList demo={demo}/>}/>
                     <Route path={'/login'} render={() => <Login/>}/>
                 </Container>
             </div>
@@ -70,4 +70,4 @@ function App({demo = false}: PropsType) {
     )
 }
 
-export default App
+export default App;
